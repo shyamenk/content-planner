@@ -44,7 +44,7 @@ export function AddCategoryModal({
         <DialogHeader>
           <DialogTitle>Add New Category</DialogTitle>
           <DialogDescription>
-            Enter a name for your new category. Click save when you're done.
+            Enter a name for your new category. Click save when you are done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

@@ -12,11 +12,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Post } from "../type";
+
+type PostUpdate = Partial<Omit<Post, "scheduledTime">> & {
+  scheduledTime?: Date;
+};
 interface PostCardProps {
   post: Post;
   onStatusChangeAction: (id: number, isPosted: boolean) => void;
   onDeleteAction: (id: number) => void;
-  onEditAction: (id: number, updatedPost: Partial<Post>) => void;
+  onEditAction: (id: number, updatedPost: PostUpdate) => void;
 }
 
 export function PostCard({

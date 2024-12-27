@@ -20,3 +20,10 @@ export type PostResult = {
   success?: Post[];
   error?: string;
 };
+
+export interface AddCategoryModalProps {
+  onAddCategory: (newCategory: string) => Promise<void>;
+  isPending: boolean;
+  isOpen: boolean;
+  onClose: () => void;
+}

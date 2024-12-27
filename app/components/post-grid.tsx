@@ -1,11 +1,15 @@
 import { Post } from "../type";
 import { PostCard } from "./post-card";
 
+type PostUpdate = Partial<Omit<Post, "scheduledTime">> & {
+  scheduledTime?: Date;
+};
+
 interface PostGridProps {
   posts: Post[];
   onStatusChange: (id: number, isPosted: boolean) => Promise<void>;
   onDelete: (id: number) => Promise<void>;
-  onEdit: (id: number, updatedPost: Partial<Post>) => Promise<void>;
+  onEdit: (id: number, updatedPost: PostUpdate) => Promise<void>;
 }
 
 export function PostGrid({

@@ -51,7 +51,12 @@ export default function Dashboard({
   );
 }
 
-function StatCard({ title, value, icon }) {
+interface StatCardProps {
+  title: string;
+  value: number;
+  icon: React.ReactNode;
+}
+function StatCard({ title, value, icon }: StatCardProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

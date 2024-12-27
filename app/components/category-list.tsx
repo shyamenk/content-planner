@@ -15,11 +15,11 @@ interface Category {
 export function CategoryList() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isPending, startTransition] = useTransition();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     fetchCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function fetchCategories() {
@@ -78,11 +78,10 @@ export function CategoryList() {
           />
         ))}
       </div>
+
       <AddCategoryModal
         onAddCategory={handleAddCategory}
         isPending={isPending}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
       />
     </div>
   );
